@@ -1,0 +1,8 @@
+<input class="app-input"
+       [type]="inputType"
+       [placeholder]="placeholder"
+       [(ngModel)]="inputValueModel"
+       [checked]="inputValueModel"
+       (change)="onChange()"
+       (keyup.enter)="onProcessValue()" />
+

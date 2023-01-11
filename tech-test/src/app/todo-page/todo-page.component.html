@@ -1,0 +1,42 @@
+<div class="todo-page-content-container">
+  <div class="todo-page-content-wrapper">
+    <app-input class="task-input"
+               [placeholder]="'Add item'"
+               [inputValueModel]="addItemValue"
+               (changeValue)="onInputChange($event)"
+               (processValue)="onAddTask($event)"
+    ></app-input>
+  </div>
+
+  <div class="extra-container">
+    <div class="filters-container">
+      <app-button [buttonText]="'All'"
+                  (click)="filter='all'"></app-button>
+      <app-button [buttonText]="'Active'"
+                  (click)="filter='active'"></app-button>
+      <app-button [buttonText]="'Done'"
+                  (click)="filter='done'"></app-button>
+    </div>
+  </div>
+  <div class="todo-items-container">
+    <div class="todo-items-wrapper">
+      <div class="todo-item" *ngFor="let task of filteredTasks() | sortByLabel">
+        <div class="todo-item-wrapper">
+          <app-input [inputType]="'checkbox'"
+                     [inputValueModel]="task.done"
+                     (changeValue)="onChangeTaskStatus(task)"
+          ></app-input>
+          <span class="todo-item-label"
+                [ngClass]="{ 'done' : task.done, 'selected': task.id === selectedTask?.id }"
+                (click)="onTaskSelect(task.id)">{{ task.label }}</span>
+        </div>
+        <app-button class="remove-item" [buttonText]="'&times;'" (click)="onDeleteTask(task.id)"></app-button>
+      </div>
+    </div>
+  </div>
+
+  <app-sidepanel *ngIf="selectedTask"
+                 [task]="selectedTask"
+                 (close)="onCloseSidepanel()"
+  ></app-sidepanel>
+</div>

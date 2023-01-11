@@ -1,0 +1,14 @@
+.app-button {
+  height: 45px;
+  width: auto;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: black;
+
+  .active {
+    background: lightgreen;
+  }
+}

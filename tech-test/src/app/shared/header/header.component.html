@@ -1,0 +1,5 @@
+<div class="app-header">
+  <div *ngFor="let item of items">
+    <span class="app-header-item" (click)="onRedirect(item.path)">{{item.label}}</span>
+  </div>
+</div>

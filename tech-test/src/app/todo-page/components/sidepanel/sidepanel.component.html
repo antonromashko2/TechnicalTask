@@ -1,0 +1,8 @@
+<div class="sidebar-container">
+  <app-button class="sidebar-close" [buttonText]="'&times;'" (click)="onClose()"></app-button>
+  <form class="sidebar-content" [formGroup]="taskForm">
+    <div class="sidebar-content-item">
+      <span>Label: {{task?.label}}</span>
+    </div>
+  </form>
+</div>

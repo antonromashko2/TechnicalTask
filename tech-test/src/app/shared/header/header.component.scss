@@ -1,0 +1,19 @@
+.app-header {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #cccccc;
+  display: flex;
+  align-items: center;
+
+  &-item {
+    margin-left: 20px;
+    cursor: pointer;
+
+    &:hover {
+      color: cornflowerblue;
+    }
+  }
+}
