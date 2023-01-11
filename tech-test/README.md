@@ -1,27 +1,43 @@
-# TechTest
+## Install and build
+```bash
+npm run install
+npm run build
+```
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+## Run application
+### Client
+```bash
+npm run start
+```
+### Server
+#### from /server
+```bash
+npm run server
+```
 
-## Development server
+## Demo
+Quick demo /assets/technical-task.demo.mp4
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
+Check root README.md
 
-## Code scaffolding
+## Solution description
+Was implemented simple todo application with base routing and CRUD operations
+Components from shared module have unit test coverage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Routing
+Application has one page /todo-page
 
-## Build
+### Data loading
+TasksResolver is used to load tasks on the page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Project structure
+Shared module - for reusable/common components, models etc. which can be imported and used in other modules.
+Todo page module - lazy loaded module for todo page. Includes own components and models.
+Pages are splitted into smart and presentation components (one page in case of tech-task application)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Перечень технологий на которых разработано решение
+- [x] Angular v8
+- [x] rxjs
+- [x] pure scss/html
+- [x] json-server
